@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenêtre Modale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Mon Projet Web</h1>
+        <p>Cliquez sur le bouton ci-dessous pour déclencher l'action.</p>
+        
+        <button id="openModal" class="btn btn-primary">Voir les détails</button>
+    </main>
+
+    <div id="myModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modalTitle">Information</h2>
+                <button class="close-btn" aria-label="Fermer">&times;</button>
+            </header>
+            <section class="modal-body">
+                <p>Ceci est une fenêtre modale dont le code est proprement séparé en trois fichiers (HTML, CSS et JS).</p>
+            </section>
+            <footer class="modal-footer">
+                <button class="btn btn-secondary close-btn">Annuler</button>
+                <button class="btn btn-primary" id="confirmAction">Accepter</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

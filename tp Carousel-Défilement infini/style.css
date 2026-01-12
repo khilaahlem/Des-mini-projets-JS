@@ -1,0 +1,404 @@
+/* Reset et styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Sections du carrousel */
+.carousel-section {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 15px;
+}
+
+/* Carrousel - Conteneur principal */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Conteneur des slides */
+.carousel__container {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 0;
+}
+
+/* Items du carrousel */
+.carousel__item {
+    flex: 1;
+    min-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Style identique pour les clones */
+.carousel__item--clone {
+    flex: 1;
+    min-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-right: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel__item:last-child {
+    border-right: none;
+}
+
+.carousel__item--clone:last-child {
+    border-right: none;
+}
+
+.carousel__item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.carousel__item p {
+    text-align: center;
+    font-weight: 500;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Effet hover sur les items */
+.carousel__item:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.carousel__item--clone:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
+}
+
+/* Boutons de contrôle */
+.carousel__controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.carousel__button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+}
+
+.carousel__button:hover:not(:disabled) {
+    background: #667eea;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.carousel__button:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+/* État désactivé des boutons */
+.carousel__button:disabled {
+    background: rgba(200, 200, 200, 0.6);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Accessibilité - Focus visible */
+.carousel__button:focus-visible {
+    outline: 3px solid #764ba2;
+    outline-offset: 2px;
+}
+
+.carousel__item:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: -3px;
+}
+
+/* Pagination - Points */
+.carousel__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.carousel__pagination-dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.carousel__pagination-dot:hover {
+    transform: scale(1.3);
+    box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+}
+
+.carousel__pagination-dot--active {
+    background: #667eea;
+    transform: scale(1.3);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+}
+
+.carousel__pagination-dot:focus-visible {
+    outline: 3px solid #764ba2;
+    outline-offset: 2px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLETTE (768px et plus)
+   ======================================== */
+@media (min-width: 768px) {
+    .carousel__item {
+        min-width: calc(50% - 0px);
+    }
+
+    .carousel-section {
+        padding: 35px 25px;
+    }
+
+    .carousel-section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - DESKTOP (1024px et plus)
+   ======================================== */
+@media (min-width: 1024px) {
+    .carousel__item {
+        min-width: calc(33.333% - 0px);
+    }
+
+    .carousel-section {
+        padding: 40px 30px;
+    }
+
+    .carousel-section h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Afficher les contrôles plus visibles sur desktop */
+    .carousel__controls {
+        bottom: 25px;
+        right: 25px;
+    }
+
+    .carousel__button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE (moins de 768px)
+   ======================================== */
+@media (max-width: 767px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .carousel-section {
+        padding: 20px 15px;
+        margin-bottom: 25px;
+    }
+
+    .carousel-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .carousel__item {
+        min-width: 100%;
+        padding: 15px;
+    }
+
+    .carousel__item img {
+        margin-bottom: 10px;
+    }
+
+    .carousel__item p {
+        font-size: 0.9rem;
+    }
+
+    .carousel__button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .carousel__controls {
+        bottom: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+
+    .carousel__pagination-dot {
+        width: 10px;
+        height: 10px;
+        border-width: 1.5px;
+    }
+}
+
+/* ========================================
+   MODE SOMBRE (optionnel - préférence utilisateur)
+   ======================================== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+    }
+
+    .carousel-section {
+        background: #2d2d44;
+        color: #e0e0e0;
+    }
+
+    .carousel-section h2 {
+        color: #e0e0e0;
+        border-bottom-color: #667eea;
+    }
+
+    .carousel {
+        background: #1a1a2e;
+        border-color: #3d3d5c;
+    }
+
+    .carousel__item {
+        background: #232338;
+        border-right-color: #3d3d5c;
+        color: #e0e0e0;
+    }
+
+    .carousel__item p {
+        color: #b0b0b0;
+    }
+
+    .carousel__item:hover {
+        background: #2d2d44;
+    }
+
+    h1 {
+        color: #e0e0e0;
+    }
+
+    .carousel__pagination-dot {
+        border-color: #667eea;
+        background: #2d2d44;
+    }
+
+    .carousel__pagination-dot--active {
+        background: #667eea;
+    }
+}
+
+/* ========================================
+   Animations de chargement
+   ======================================== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-section {
+    animation: slideIn 0.6s ease-out;
+}
+
+/* ========================================
+   Transitions et performances
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .carousel__container {
+        transition: transform 0.1s linear;
+    }
+}

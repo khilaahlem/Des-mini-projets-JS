@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    nav {
+      background: #222;
+      padding: 15px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #4caf50;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 6px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #43a047;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="tp3.html">← Retour à l'accueil</a>
+  </nav>
+
+  <main>
+    <h1>Contact</h1>
+
+    <form>
+      <label for="name">Nom</label>
+      <input type="text" id="name" placeholder="Votre nom" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Votre email" />
+
+      <label for="message">Message</label>
+      <textarea id="message" placeholder="Votre message"></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

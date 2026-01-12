@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrousel - ES6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carrouse Des Caractéres Marvel</h1>
+        
+        <section class="carousel-section">
+            <h2>Batman</h2>
+            <div class="carousel" id="carousel1">
+                <div class="carousel__container">
+                    <div class="carousel__item">
+                        <img src="1.jpg" alt="Slide 1">
+                        <p>Slide 1</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="2.jpg" alt="Slide 2">
+                        <p>Slide 2</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="3.jpg" alt="Slide 3">
+                        <p>Slide 3</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="4.jpg" alt="Slide 4">
+                        <p>Slide 4</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="5.jpg" alt="Slide 5">
+                        <p>Slide 5</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="6.jpg" alt="Slide 6">
+                        <p>Slide 6</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="carousel-section">
+            <h2>Witch</h2>
+            <div class="carousel" id="carousel2">
+                <div class="carousel__container">
+                    <div class="carousel__item">
+                        <img src="11.jpg" alt="Produit 1">
+                        <p>Produit 1</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="22.jpg" alt="Produit 2">
+                        <p>Produit 2</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="33.jpg" alt="Produit 3">
+                        <p>Produit 3</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="44.jpg" alt="Produit 4">
+                        <p>Produit 4</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="55.jpg" alt="Produit 5">
+                        <p>Produit 5</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="carousel-section">
+            <h2>Black Widow</h2>
+            <div class="carousel" id="carousel3">
+                <div class="carousel__container">
+                    <div class="carousel__item">
+                        <img src="111.jpg" alt="Item 1">
+                        <p>Item 1</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="222.jpg" alt="Item 2">
+                        <p>Item 2</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="333.jpg" alt="Item 3">
+                        <p>Item 3</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="444.jpg" alt="Item 4">
+                        <p>Item 4</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="555.jpg" alt="Item 5">
+                        <p>Item 5</p>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="666.jpg" alt="Item 6">
+                        <p>Item 6</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="carousel.js"></script>
+    <script>
+      
+        const carousel1 = new Carousel(
+            document.getElementById('carousel1'),
+            {
+                visibleItems: 3,
+                itemsToScroll: 1,
+                loop: true,
+                autoplay: false
+            }
+        );
+
+        const carousel2 = new Carousel(
+            document.getElementById('carousel2'),
+            {
+                visibleItems: 2,
+                itemsToScroll: 1,
+                loop: false,
+                autoplay: false
+            }
+        );
+
+        
+        const carousel3 = new Carousel(
+            document.getElementById('carousel3'),
+            {
+                visibleItems: 3,
+                itemsToScroll: 2,
+                loop: true,
+                autoplay: false
+            }
+        );
+    </script>
+</body>
+</html>
